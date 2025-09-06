@@ -1,0 +1,17 @@
+{
+    "name": "GreatClock.DataDriven.Editor",
+    "references": [
+        "GUID:a9828cc5404beef428a66bd2055cc0ba"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

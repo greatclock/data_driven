@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GreatClock.Framework {
 
@@ -30,6 +31,8 @@ namespace GreatClock.Framework {
 			public StructCtrl(RamDataNodeStructBase target) { mTarget = target; }
 			public void HandleEventBubbling() { mTarget.HandleEventBubbling(); }
 		}
+
+		protected static List<IRamDataCtrl> s_temp_ctrls = new List<IRamDataCtrl>();
 
 	}
 

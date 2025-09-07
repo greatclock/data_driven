@@ -64,13 +64,14 @@ namespace GreatClock.Framework {
 
 		public void Clear() {
 			mDict1.Clear();
-			// TODO optimize
-			List<IRamDataCtrl> ctrls = new List<IRamDataCtrl>(mDict2.Values);
+			s_temp_ctrls.Clear();
+			s_temp_ctrls.AddRange(mDict2.Values);
 			mDict2.Clear();
-			foreach (var ctrl in ctrls) {
+			foreach (var ctrl in s_temp_ctrls) {
 				ctrl.Reset();
 				ctrl.Dispose();
 			}
+			s_temp_ctrls.Clear();
 			mDirty = 1;
 		}
 

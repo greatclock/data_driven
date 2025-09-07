@@ -69,13 +69,14 @@ namespace GreatClock.Framework {
 
 		public void Clear() {
 			mList1.Clear();
-			// TODO optimize
-			List<IRamDataCtrl> ctrls = new List<IRamDataCtrl>(mList2);
+			s_temp_ctrls.Clear();
+			s_temp_ctrls.AddRange(mList2);
 			mList2.Clear();
-			foreach (var ctrl in ctrls) {
+			foreach (var ctrl in s_temp_ctrls) {
 				ctrl.Reset();
 				ctrl.Dispose();
 			}
+			s_temp_ctrls.Clear();
 			mDirty = 1;
 		}
 

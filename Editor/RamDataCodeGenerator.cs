@@ -55,11 +55,12 @@ namespace GreatClock.Framework {
 					fields_sort.Reverse();
 					string classname = match.Groups[3].Value;
 					if (classname != match.Groups[8].Value) {
-						// TODO Invalid type define
+						// Invalid type define
 						continue;
 					}
 					if (match.Groups[7].Value != basetype) {
-						// TODO ignored class : classname
+						// ignored class : classname
+						Debug.LogError($"Invalid class '{classname}' and it will be ignored !");
 						continue;
 					}
 					TypeCount tc;
@@ -95,9 +96,9 @@ namespace GreatClock.Framework {
 			}
 			foreach (var kv in dict) {
 				if (kv.Value.count <= 0) {
-					Debug.LogError($"TODO type '{kv.Key}' define not found !");
+					Debug.LogError($"Type '{kv.Key}' define not found !");
 				} else if (kv.Value.count > 1) {
-					Debug.LogError($"TODO type '{kv.Key}' defined more than once !");
+					Debug.LogError($"Type '{kv.Key}' defined more than once !");
 				}
 			}
 			foreach (FileData src in srcs) { GenerateCode(src); }
